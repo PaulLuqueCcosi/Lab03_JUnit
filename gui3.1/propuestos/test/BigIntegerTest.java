@@ -1,16 +1,14 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-
 import java.math.BigInteger;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class BigIntegerTest {
 
     @BeforeClass
-    public static void beforeClass(){
+    public static void beforeClass() {
         System.out.println("Iniciamos [BigIntegerTest]");
     }
 
@@ -18,7 +16,7 @@ public class BigIntegerTest {
     public void testMaxWithGreaterValue() {
         BigInteger num1 = new BigInteger("100");
         BigInteger num2 = new BigInteger("200");
-        
+
         BigInteger expectedMax = new BigInteger("200");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -27,7 +25,7 @@ public class BigIntegerTest {
     public void testMaxWithSmallerValue() {
         BigInteger num1 = new BigInteger("300");
         BigInteger num2 = new BigInteger("200");
-        
+
         BigInteger expectedMax = new BigInteger("300");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -36,7 +34,7 @@ public class BigIntegerTest {
     public void testMaxWithEqualValues() {
         BigInteger num1 = new BigInteger("500");
         BigInteger num2 = new BigInteger("500");
-        
+
         BigInteger expectedMax = new BigInteger("500");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -45,7 +43,7 @@ public class BigIntegerTest {
     public void testMaxWithNegativeValues() {
         BigInteger num1 = new BigInteger("-100");
         BigInteger num2 = new BigInteger("-200");
-        
+
         BigInteger expectedMax = new BigInteger("-100");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -54,7 +52,7 @@ public class BigIntegerTest {
     public void testMaxWithVeryLargeValues() {
         BigInteger num1 = new BigInteger("1000000000000000000000000000");
         BigInteger num2 = new BigInteger("2000000000000000000000000000");
-        
+
         BigInteger expectedMax = new BigInteger("2000000000000000000000000000");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -63,7 +61,7 @@ public class BigIntegerTest {
     public void testMaxWithMaxRangeValues() {
         BigInteger num1 = new BigInteger(String.valueOf(Long.MAX_VALUE));
         BigInteger num2 = new BigInteger(String.valueOf(Long.MAX_VALUE - 1));
-        
+
         BigInteger expectedMax = num1;
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -72,7 +70,7 @@ public class BigIntegerTest {
     public void testMaxWithMinRangeValues() {
         BigInteger num1 = new BigInteger(String.valueOf(Long.MIN_VALUE));
         BigInteger num2 = new BigInteger(String.valueOf(Long.MIN_VALUE + 1));
-        
+
         BigInteger expectedMax = num2;
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -81,7 +79,7 @@ public class BigIntegerTest {
     public void testMaxWithPositiveAndZero() {
         BigInteger num1 = new BigInteger("500");
         BigInteger num2 = BigInteger.ZERO;
-        
+
         BigInteger expectedMax = new BigInteger("500");
         assertEquals(expectedMax, num1.max(num2));
     }
@@ -90,7 +88,7 @@ public class BigIntegerTest {
     public void testMaxWithNegativeAndZero() {
         BigInteger num1 = new BigInteger("-500");
         BigInteger num2 = BigInteger.ZERO;
-        
+
         BigInteger expectedMax = BigInteger.ZERO;
         assertEquals(expectedMax, num1.max(num2));
     }

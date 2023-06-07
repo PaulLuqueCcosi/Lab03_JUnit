@@ -14,22 +14,6 @@ public class FibonacciTest {
     public static void beforeClass() {
         System.out.println("Iniciamos [FibonacciTest]");
     }
-    // @ParameterizedTest
-    // @ValueSource(ints = { -5, -7, -3 })
-    // void testFibonacciWithNegativeNumber(int negativeNumber) {
-    // Assertions.assertThrows(IllegalArgumentException.class, () -> {
-    // fibonacci.nfibonancci(negativeNumber);
-    // }, "Posicion: El argumento debe ser un n�mero no negativo.");
-    // }
-
-    // @Test
-    // void testFibonacciWithNullValue() {
-    // int nullparameter = (Integer) null;
-    // Assertions.assertThrows(IllegalArgumentException.class, () -> {
-    // fibonacci.nfibonancci(nullparameter);
-    // }, "Posicion: El argumento debe ser un n�mero valido.");
-    // System.out.println( fibonacci.nfibonancci(nullparameter));
-    // }
 
     @Test
     public void testFibonacciWithNegativeNumber() {
@@ -69,12 +53,18 @@ public class FibonacciTest {
         assertEquals(832040, fibonacci.nfibonancci(possitiveNumber));
     }
 
-    // cuando es vacio X no lo permite el tipado
-    // cuando es string X no lo permite el tipado
-    // cuando es un float X no lo permite el tipado
-    // cuando es 0
-    // cuando es 1
-    // cuando es un numero positivo varios
-    // cuando es un numero negativo varios mismo r
+    @Test
+    public void testFibonacciWithMaxValue() {
+        int possitiveNumber = 46;
+        assertEquals(1836311903, fibonacci.nfibonancci(possitiveNumber));
+    }
+
+    @Test
+    public void testFibonacciWithExceedsInteger() {
+        int exceedesInteger = 47;
+        assertThrows("Posicion: Excede el tamanio del entero.", IllegalArgumentException.class, () -> {
+            fibonacci.nfibonancci(exceedesInteger);
+        });
+    }
 
 }
