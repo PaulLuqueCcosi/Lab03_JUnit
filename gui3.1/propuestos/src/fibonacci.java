@@ -1,10 +1,10 @@
-package pruebasPSejem;
 
+package src;
 public class fibonacci {
 	public static int nfibonancci(int i) {
 		
 		if (i < 0) {
-			throw new IllegalArgumentException("Posicion: El argumento debe ser un número no negativo.");
+			throw new IllegalArgumentException("Posicion: El argumento debe ser un numero no negativo.");
 		}
 		if (i == 0) {
 			return 0;

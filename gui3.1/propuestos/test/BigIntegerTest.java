@@ -1,9 +1,18 @@
-package otro;
-import org.junit.jupiter.api.Test;
+package test;
+
+import static org.junit.Assert.assertEquals;
+
 import java.math.BigInteger;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class BigIntegerTest {
+
+    @BeforeClass
+    public static void beforeClass(){
+        System.out.println("Iniciamos [BigIntegerTest]");
+    }
 
     @Test
     public void testMaxWithGreaterValue() {
